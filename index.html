@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Café Elaichi | A little pause. A lot of flavour.</title>
+<meta name="description" content="Café Elaichi, Minister Road, near KIMS Hospital, Secunderabad. Chai, pasta, rice and café bites.">
+<meta name="theme-color" content="#0f3b2a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f3b2a'/%3E%3Cpath d='M32 10c10 8 14 20 0 44C18 30 22 18 32 10z' fill='%23c9a24a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green-900:#0a2a1d; --green-800:#0f3b2a; --green-700:#165238; --green-500:#2e7d55;
+  --gold-300:#e8cf8c; --gold-400:#d9b765; --gold-500:#c9a24a; --gold-700:#8f6f26;
+  --white:#ffffff; --ivory:#f7f8f4; --ink:#10261c; --muted:#5b6f64;
+  --gold-grad:linear-gradient(135deg,#f3dfa0 0%,#c9a24a 45%,#8f6f26 100%);
+  --serif:"Cormorant Garamond",Georgia,serif; --sans:"Manrope",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--gold-500);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--gold-500);color:var(--green-900);padding:8px 14px;z-index:99}
+.skip:focus{left:8px}
+.wrap{width:min(1180px,92%);margin-inline:auto}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,162,74,.35)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:10px 0}
+.logo{display:flex;align-items:center;gap:12px}
+.logo svg{width:52px;height:52px;flex:none}
+.logo-text{display:flex;flex-direction:column;line-height:1}
+.logo-text b{font-family:var(--serif);font-size:34px;font-weight:700;letter-spacing:.5px;background:linear-gradient(90deg,var(--green-800),var(--green-500) 55%,var(--gold-500));-webkit-background-clip:text;background-clip:text;color:transparent}
+.logo-text small{font-size:9.5px;letter-spacing:.28em;color:var(--gold-700);font-weight:700;margin-top:4px}
+nav{display:flex;gap:30px;font-weight:600;font-size:15px}
+nav a{position:relative;padding:6px 0}
+nav a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--gold-grad);transition:width .3s}
+nav a:hover::after{width:100%}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:999px;font-weight:700;font-size:15px;border:0;cursor:pointer;transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:var(--gold-grad);color:var(--green-900);box-shadow:0 10px 26px rgba(143,111,38,.35)}
+.btn-green{background:var(--green-800);color:var(--white);box-shadow:0 10px 26px rgba(15,59,42,.3)}
+.btn-line{background:transparent;color:var(--white);border:1.5px solid var(--gold-400)}
+.menu-btn{display:none;background:none;border:1.5px solid var(--green-800);border-radius:10px;padding:8px 12px;font-weight:700;color:var(--green-800)}
+
+/* hero: half white / half green-gold */
+.hero{position:relative;display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 74px);overflow:hidden}
+.hero-left{background:var(--white);display:flex;align-items:center;padding:60px 4vw 60px max(4vw,calc((100vw - 1180px)/2))}
+.hero-right{position:relative;background:radial-gradient(circle at 30% 20%,var(--green-700),var(--green-900) 70%);display:grid;place-items:center;perspective:1100px;overflow:hidden}
+.hero-right::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 46px,rgba(201,162,74,.07) 46px 47px)}
+.hero-right::after{content:"";position:absolute;left:-90px;top:0;bottom:0;width:180px;background:var(--white);transform:skewX(-6deg);box-shadow:0 0 0 3px var(--gold-500)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;color:var(--gold-700);letter-spacing:.14em}
+.eyebrow::before{content:"";width:34px;height:2px;background:var(--gold-grad)}
+h1,h2,h3{font-family:var(--serif);line-height:1.05;font-weight:700;color:var(--green-800)}
+h1{font-size:clamp(46px,6.2vw,92px);margin:18px 0 22px}
+h1 em,h2 em{font-style:italic;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.08em}
+.lead{font-size:18px;color:var(--muted);max-width:460px;margin-bottom:32px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.facts{display:flex;gap:30px;margin-top:44px;flex-wrap:wrap}
+.facts div{border-left:3px solid var(--gold-500);padding-left:14px}
+.facts b{display:block;font-family:var(--serif);font-size:28px;color:var(--green-800)}
+.facts span{font-size:13px;color:var(--muted)}
+
+/* 3D scene */
+.scene{position:relative;z-index:2;width:min(440px,80%);aspect-ratio:1;transform-style:preserve-3d;transition:transform .15s ease-out;will-change:transform}
+.layer{position:absolute;inset:0;transform-style:preserve-3d}
+.ring{position:absolute;inset:6%;border-radius:50%;border:2px solid rgba(217,183,101,.55);transform:translateZ(-60px);animation:spin 26s linear infinite}
+.ring.r2{inset:-4%;border-style:dashed;border-color:rgba(217,183,101,.3);transform:translateZ(-110px);animation-duration:40s;animation-direction:reverse}
+@keyframes spin{to{transform:translateZ(-60px) rotate(360deg)}}
+.ring.r2{animation-name:spin2}
+@keyframes spin2{to{transform:translateZ(-110px) rotate(-360deg)}}
+.pod{position:absolute;width:15%;aspect-ratio:1/2.2;filter:drop-shadow(0 18px 14px rgba(0,0,0,.4));animation:float 6s ease-in-out infinite}
+.pod svg{width:100%;height:100%}
+.p1{left:2%;top:12%;transform:translateZ(120px) rotate(-24deg)}
+.p2{right:4%;top:52%;transform:translateZ(150px) rotate(30deg);animation-delay:-2s;width:12%}
+.p3{left:14%;bottom:2%;transform:translateZ(90px) rotate(12deg);animation-delay:-4s;width:10%}
+@keyframes float{50%{translate:0 -14px}}
+.cup{position:absolute;inset:14% 12% 8%;transform:translateZ(60px)}
+.cup svg{width:100%;height:100%;filter:drop-shadow(0 34px 26px rgba(0,0,0,.5))}
+.steam path{stroke:rgba(255,255,255,.7);stroke-width:3;fill:none;stroke-linecap:round;stroke-dasharray:40;animation:steam 3.2s ease-in-out infinite}
+.steam path:nth-child(2){animation-delay:-1s}.steam path:nth-child(3){animation-delay:-2s}
+@keyframes steam{0%{stroke-dashoffset:40;opacity:0}40%{opacity:1}100%{stroke-dashoffset:-40;opacity:0}}
+.badge{position:absolute;right:6%;bottom:8%;z-index:3;background:var(--gold-grad);color:var(--green-900);font-weight:800;font-size:12px;letter-spacing:.12em;text-align:center;padding:18px 16px;border-radius:50%;width:104px;height:104px;display:grid;place-items:center;line-height:1.3;box-shadow:0 14px 30px rgba(0,0,0,.35);transform:rotate(-10deg)}
+.hero-photo-note{position:absolute;left:6%;bottom:5%;z-index:3;color:var(--gold-300);font-size:12px;letter-spacing:.14em}
+
+/* sections */
+section{padding:100px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:46px}
+h2{font-size:clamp(36px,4.6vw,64px);margin-top:14px}
+.sec-head p{color:var(--muted);max-width:360px}
+
+.story{background:var(--ivory);position:relative}
+.story-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:70px;align-items:center}
+.photo3d{perspective:1200px}
+.photo-frame{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/5;background:linear-gradient(160deg,var(--green-700),var(--green-900));box-shadow:0 40px 70px rgba(10,42,29,.35),0 0 0 6px var(--white),0 0 0 8px var(--gold-500);transform:rotateY(-8deg) rotateX(3deg);transition:transform .5s}
+.photo-frame:hover{transform:rotateY(0) rotateX(0)}
+.photo-frame img{width:100%;height:100%;object-fit:cover}
+.photo-fallback{position:absolute;inset:0;display:grid;place-items:center;color:var(--gold-300);text-align:center;font-family:var(--serif);font-size:28px;padding:30px;z-index:0}
+.photo-frame img{position:relative;z-index:1}
+.story p{color:var(--muted);margin-bottom:18px;max-width:520px}
+
+/* menu */
+.menu{background:var(--white)}
+.tools{display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between;margin-bottom:22px}
+.filters{display:flex;gap:10px;flex-wrap:wrap}
+.chip{padding:10px 20px;border-radius:999px;border:1.5px solid rgba(15,59,42,.25);background:var(--white);font:600 14px var(--sans);color:var(--green-800);cursor:pointer;transition:.25s}
+.chip[aria-pressed="true"],.chip:hover{background:var(--green-800);color:var(--gold-300);border-color:var(--green-800)}
+.search input{padding:11px 18px;border-radius:999px;border:1.5px solid rgba(15,59,42,.25);font:500 14px var(--sans);min-width:250px}
+.notice{background:var(--ivory);border-left:4px solid var(--gold-500);padding:14px 18px;border-radius:8px;font-size:14px;color:var(--muted);margin-bottom:30px}
+.notice b{color:var(--green-800)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px;perspective:1400px}
+.card{position:relative;background:linear-gradient(160deg,#fff,#f3f6f1);border:1px solid rgba(201,162,74,.45);border-radius:20px;padding:24px;transform-style:preserve-3d;transition:transform .2s ease-out,box-shadow .3s;box-shadow:0 14px 30px rgba(10,42,29,.1)}
+.card:hover{box-shadow:0 30px 50px rgba(10,42,29,.22)}
+.card>*{transform:translateZ(26px)}
+.veg{width:16px;height:16px;border:2px solid #1f9d55;display:inline-grid;place-items:center;border-radius:3px}
+.veg::after{content:"";width:7px;height:7px;border-radius:50%;background:#1f9d55}
+.card h3{font-size:27px;margin:14px 0 4px}
+.cat{font-size:12px;color:var(--muted);letter-spacing:.08em}
+.price{margin-top:18px;display:flex;justify-content:space-between;align-items:center}
+.price strong{font-family:var(--serif);font-size:30px;color:var(--green-800)}
+.price strong.ask{font-size:16px;font-family:var(--sans);color:var(--gold-700)}
+.tag{font-size:11px;font-weight:700;letter-spacing:.08em;padding:5px 10px;border-radius:999px}
+.tag.ok{background:var(--green-800);color:var(--gold-300)}
+.tag.ref{background:#f3ecd6;color:var(--gold-700)}
+.empty{text-align:center;padding:60px 0;color:var(--muted)}
+.sources{margin-top:34px;font-size:13px;color:var(--muted)}
+.sources a{color:var(--green-700);text-decoration:underline}
+
+/* quote band */
+.band{background:linear-gradient(90deg,var(--white) 0 50%,var(--green-800) 50% 100%);padding:0}
+.band .wrap{display:grid;grid-template-columns:1fr 1fr}
+.band .l,.band .r{padding:80px 4vw}
+.band .r{color:var(--gold-300)}
+.band .r h2{color:var(--gold-300)}
+.band .r h2 em{color:var(--white);-webkit-text-fill-color:var(--white);background:none}
+
+/* visit */
+.visit{background:var(--green-900);color:var(--white);position:relative;overflow:hidden}
+.visit::before{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;border:2px solid rgba(201,162,74,.35)}
+.visit h2{color:var(--white)}
+.visit .eyebrow{color:var(--gold-300)}
+.visit-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
+address{font-style:normal;font-size:19px;line-height:1.8;margin:26px 0;color:#dfeee5;border-left:3px solid var(--gold-500);padding-left:18px}
+.hours{display:grid;gap:4px;color:#b9d2c4;margin-bottom:28px}
+.map-card{border-radius:22px;padding:34px;background:linear-gradient(160deg,var(--green-700),var(--green-800));box-shadow:0 30px 60px rgba(0,0,0,.4),inset 0 0 0 1.5px var(--gold-500);transform:rotateY(8deg);transition:transform .5s}
+.map-card:hover{transform:rotateY(0)}
+.map-card h3{color:var(--gold-300);font-size:34px;margin-bottom:10px}
+.map-card p{color:#cfe3d7;margin-bottom:22px}
+
+footer{background:var(--green-900);border-top:1px solid rgba(201,162,74,.4);color:#a9c4b5;padding:28px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media(max-width:900px){
+  nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;flex-direction:column;padding:18px 6%;gap:14px;border-bottom:1px solid var(--gold-500)}
+  nav.open{display:flex}
+  .menu-btn{display:block}.header-cta{display:none}
+  .hero{grid-template-columns:1fr;min-height:0}
+  .hero-left{padding:56px 6%}
+  .hero-right{min-height:520px}
+  .hero-right::after{display:none}
+  .story-grid,.visit-grid{grid-template-columns:1fr;gap:44px}
+  .band{background:none}.band .wrap{grid-template-columns:1fr;width:100%}.band .l{background:#fff}.band .r{background:var(--green-800)}
+  section{padding:70px 0}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- reusable logo mark -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3dfa0"/><stop offset=".5" stop-color="#c9a24a"/><stop offset="1" stop-color="#8f6f26"/></linearGradient>
+    <linearGradient id="gr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2e7d55"/><stop offset="1" stop-color="#0a2a1d"/></linearGradient>
+    <symbol id="pod" viewBox="0 0 60 130">
+      <path d="M30 4C52 30 58 78 30 126 2 78 8 30 30 4Z" fill="url(#gr)" stroke="url(#gg)" stroke-width="3"/>
+      <path d="M30 14C30 50 30 90 30 118" stroke="url(#gg)" stroke-width="2" fill="none"/>
+      <path d="M30 40C18 52 16 80 30 104M30 40C42 52 44 80 30 104" stroke="#c9a24a" stroke-opacity=".6" stroke-width="1.5" fill="none"/>
+    </symbol>
+    <symbol id="mark" viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="30" fill="#0f3b2a" stroke="url(#gg)" stroke-width="2.5"/>
+      <path d="M32 9C46 20 50 38 32 56 14 38 18 20 32 9Z" fill="url(#gg)"/>
+      <path d="M32 14V52M32 26C25 31 24 41 32 49M32 26C39 31 40 41 32 49" stroke="#0f3b2a" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M12 44c6 6 14 8 20 8" stroke="#e8cf8c" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".7"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap bar">
+    <a href="#home" class="logo" aria-label="Café Elaichi home">
+      <svg viewBox="0 0 64 64" role="img" aria-label="Elaichi logo"><use href="#mark"/></svg>
+      <span class="logo-text"><b>elaichi</b><small>ADDING LUXURY IN FOOD</small></span>
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" aria-label="Main"><a href="#story">Our café</a><a href="#menu">The menu</a><a href="#visit">Find us</a></nav>
+    <a class="btn btn-green header-cta" href="#menu">Explore the menu</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="home" style="padding:0">
+    <div class="hero-left">
+      <div>
+        <span class="eyebrow">YOUR EVERYDAY LITTLE ESCAPE</span>
+        <h1>A little pause.<br>A lot of <em>flavour.</em></h1>
+        <p class="lead">Chai that calls for another cup. Pasta, rice and bites that bring people together. Make a little room in your day for Elaichi.</p>
+        <div class="cta"><a class="btn btn-green" href="#menu">Find your favourite</a><a class="btn" style="color:var(--green-800);border:1.5px solid var(--gold-500)" href="#visit">Come on over</a></div>
+        <div class="facts">
+          <div><b>6 am – 12 am</b><span>Open daily*</span></div>
+          <div><b>Near KIMS</b><span>Minister Road, PG Road</span></div>
+          <div><b>Veg-friendly</b><span>Dine-in &amp; takeaway</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right" id="heroRight">
+      <div class="scene" id="scene" aria-hidden="true">
+        <div class="ring"></div><div class="ring r2"></div>
+        <div class="pod p1"><svg viewBox="0 0 60 130"><use href="#pod"/></svg></div>
+        <div class="pod p2"><svg viewBox="0 0 60 130"><use href="#pod"/></svg></div>
+        <div class="pod p3"><svg viewBox="0 0 60 130"><use href="#pod"/></svg></div>
+        <div class="cup">
+          <svg viewBox="0 0 300 300">
+            <defs>
+              <linearGradient id="cupg" x1="0" x2="1"><stop offset="0" stop-color="#fff"/><stop offset=".55" stop-color="#eef3ee"/><stop offset="1" stop-color="#c9d6cd"/></linearGradient>
+              <radialGradient id="tea" cx=".5" cy=".4"><stop offset="0" stop-color="#d9a76a"/><stop offset="1" stop-color="#8a5a2b"/></radialGradient>
+            </defs>
+            <ellipse cx="150" cy="268" rx="118" ry="18" fill="rgba(0,0,0,.35)"/>
+            <ellipse cx="150" cy="248" rx="110" ry="20" fill="url(#cupg)" stroke="url(#gg)" stroke-width="3"/>
+            <path d="M58 118h184c0 70-30 120-92 120S58 188 58 118Z" fill="url(#cupg)" stroke="url(#gg)" stroke-width="3"/>
+            <path d="M242 138c40-6 44 46 4 54" fill="none" stroke="url(#gg)" stroke-width="12" stroke-linecap="round"/>
+            <ellipse cx="150" cy="118" rx="92" ry="19" fill="#fff" stroke="url(#gg)" stroke-width="3"/>
+            <ellipse cx="150" cy="120" rx="80" ry="14" fill="url(#tea)"/>
+            <path d="M86 160c20 16 110 16 128 0" stroke="url(#gg)" stroke-width="3" fill="none" opacity=".8"/>
+            <g class="steam"><path d="M120 92c-14-18 14-30 0-52"/><path d="M152 92c-14-18 14-30 0-56"/><path d="M184 92c-14-18 14-30 0-52"/></g>
+          </svg>
+        </div>
+      </div>
+      <div class="badge">CHAI • BITES<br>&amp;<br>GOOD TIMES</div>
+      <div class="hero-photo-note">CHAI · PASTA · COMFORT FOOD</div>
+    </div>
+  </section>
+
+  <section class="story" id="story">
+    <div class="wrap story-grid">
+      <div class="photo3d">
+        <div class="photo-frame">
+          <div class="photo-fallback">Café Elaichi<br>Minister Road</div>
+          <img src="assets/cafe-exterior.webp" alt="Café Elaichi at night with its glowing green sign and outdoor seating" width="1152" height="1536" loading="lazy" onerror="this.remove()">
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow">THE ELAICHI WAY</span>
+        <h2>Stay for a sip.<br><em>Stay a little longer.</em></h2>
+        <p style="margin-top:22px">Some plans are as simple as “let’s get chai.” At Elaichi there’s a place for unhurried catch-ups, the afternoon snack break and the conversations that deserve another cup.</p>
+        <p>Find us on Minister Road, near KIMS Hospital. Settle in, explore Indian comfort food and café favourites, and make yourself a little time.</p>
+        <a class="btn btn-gold" href="#visit">Plan your visit</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu" id="menu">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="eyebrow">THE MENU</span><h2>Find your <em>usual.</em><br>Or your next favourite.</h2></div>
+        <p>Items and prices below are shown exactly as listed online. Tap a filter or search for a dish.</p>
+      </div>
+      <div class="tools">
+        <div class="filters" role="group" aria-label="Menu categories" id="filters"></div>
+        <label class="search"><span class="sr" style="position:absolute;left:-999px">Search the menu</span><input id="q" type="search" placeholder="Search dishes…"></label>
+      </div>
+      <p class="notice"><b>About these prices.</b> The Zomato page blocks automated reading, so the prices shown come from the Magicpin and Justdial listings (Justdial rounds each price up by ₹1). Items marked “Reference” were named by visitors but have no published price. Please confirm with the café before ordering.</p>
+      <div class="grid" id="grid"></div>
+      <p class="empty" id="empty" hidden>No matches. Try “pasta”, “rice” or “chai”.</p>
+      <p class="sources">Sources:
+        <a href="https://magicpin.in/Secunderabad/Pg-Road/Restaurant/Caf%C3%A9-Elaichi/store/3746aa" target="_blank" rel="noopener noreferrer">Magicpin</a> ·
+        <a href="https://www.justdial.com/Secunderabad/Cafe-Elaichi-Sindhi-Colony-Minister-Road/040PXX40-XX40-191112171315-N2D5_BZDET/menu" target="_blank" rel="noopener noreferrer">Justdial</a> ·
+        <a href="https://restaurant-guru.in/Cafe-Elaichi-Secunderabad/menu" target="_blank" rel="noopener noreferrer">Restaurant Guru</a> ·
+        <a href="https://www.zomato.com/hyderabad/cafe-elaichi-pg-road-secunderabad/menu" target="_blank" rel="noopener noreferrer">Zomato menu page</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="band" aria-label="Tagline">
+    <div class="wrap">
+      <div class="l"><span class="eyebrow">LESS SCROLLING. MORE SIPPING.</span></div>
+      <div class="r"><h2>Life happens.<br><em>Chai helps.</em></h2></div>
+    </div>
+  </section>
+
+  <section class="visit" id="visit">
+    <div class="wrap visit-grid">
+      <div>
+        <span class="eyebrow">SEE YOU AT ELAICHI</span>
+        <h2>Your next catch-up<br><em>starts here.</em></h2>
+        <address>Café Elaichi<br>1-8-32/68/1, Minister Road<br>Near KIMS Hospital, PG Road<br>Secunderabad, Hyderabad<br>+91 99890 88100</address>
+        <div class="hours"><span>Listed hours: 6 am – 12 midnight</span><span>*Please confirm opening hours with the café.</span></div>
+        <a class="btn btn-gold" href="https://www.google.com/maps/search/?api=1&query=Cafe+Elaichi+Minister+Road+Secunderabad" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+      </div>
+      <div class="map-card">
+        <h3>Meet me at Elaichi.</h3>
+        <p>Minister Road · Secunderabad. A short walk from KIMS Hospital.</p>
+        <a class="btn btn-line" href="#menu">See what’s cooking</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© <span id="yr">2026</span> Café Elaichi · Adding luxury in food</span><span>Menu data collected October 2026. Prices may change.</span></div>
+</footer>
+
+<script>
+/* ============================================================
+   MENU DATA — edit here.
+   To add Zomato items, copy them exactly into this list:
+   {n:"Item name", c:"Category", p:123, v:true, s:"Zomato"}
+   Use p:null when no price is published.
+   ============================================================ */
+const MENU = [
+  // Verified prices (Magicpin; Justdial lists each ₹1 higher)
+  {n:"Dahi Rice",            c:"Rice & biryani", p:149, v:true, s:"Magicpin"},
+  {n:"Jeera Rice",           c:"Rice & biryani", p:249, v:true, s:"Magicpin"},
+  {n:"Veg Biryani",          c:"Rice & biryani", p:329, v:true, s:"Magicpin"},
+  {n:"Jeera Aloo",           c:"Main course",    p:199, v:true, s:"Magicpin"},
+  {n:"Tortilla Chips Platter",c:"Snacks & bites",p:249, v:true, s:"Magicpin"},
+  {n:"White Sauce Pasta",    c:"Pasta",          p:289, v:true, s:"Magicpin"},
+  {n:"Pink Sauce Pasta",     c:"Pasta",          p:329, v:true, s:"Magicpin"},
+  {n:"Veg White Sauce Pasta",c:"Pasta",          p:369, v:true, s:"Magicpin"},
+  {n:"Veg Pink Sauce Pasta", c:"Pasta",          p:409, v:true, s:"Magicpin"},
+  // Reference items named by visitors / dish lists — no published price
+  {n:"Tea (Chai)",     c:"Chai & drinks", p:null, v:true, s:"Restaurant Guru"},
+  {n:"Coffee",         c:"Chai & drinks", p:null, v:true, s:"Restaurant Guru"},
+  {n:"Cold Coffee",    c:"Chai & drinks", p:null, v:true, s:"Restaurant Guru"},
+  {n:"Cappuccino",     c:"Chai & drinks", p:null, v:true, s:"Restaurant Guru"},
+  {n:"Hot Chocolate",  c:"Chai & drinks", p:null, v:true, s:"Restaurant Guru"},
+  {n:"Lassi",          c:"Chai & drinks", p:null, v:true, s:"Restaurant Guru"},
+  {n:"Lemonade",       c:"Chai & drinks", p:null, v:true, s:"Restaurant Guru"},
+  {n:"Soda",           c:"Chai & drinks", p:null, v:true, s:"Restaurant Guru"},
+  {n:"Bhaji Pav",      c:"Snacks & bites",p:null, v:true, s:"Restaurant Guru"},
+  {n:"French Fries",   c:"Snacks & bites",p:null, v:true, s:"Restaurant Guru"},
+  {n:"Sandwiches",     c:"Snacks & bites",p:null, v:true, s:"Restaurant Guru"},
+  {n:"Soup",           c:"Snacks & bites",p:null, v:true, s:"Restaurant Guru"}
+];
+const CATS = ["All items","Chai & drinks","Snacks & bites","Pasta","Rice & biryani","Main course"];
+let cat = "All items", term = "";
+const $ = s => document.querySelector(s);
+const grid = $("#grid"), filters = $("#filters");
+
+CATS.forEach(c => {
+  const b = document.createElement("button");
+  b.className = "chip"; b.type = "button"; b.textContent = c;
+  b.setAttribute("aria-pressed", c === cat);
+  b.onclick = () => { cat = c; [...filters.children].forEach(x => x.setAttribute("aria-pressed", x === b)); render(); };
+  filters.appendChild(b);
+});
+$("#q").addEventListener("input", e => { term = e.target.value.trim().toLowerCase(); render(); });
+
+function render(){
+  const items = MENU.filter(i => (cat === "All items" || i.c === cat) && (!term || (i.n + " " + i.c).toLowerCase().includes(term)));
+  grid.innerHTML = "";
+  items.forEach(i => {
+    const d = document.createElement("article");
+    d.className = "card";
+    const verified = i.p !== null;
+    d.innerHTML = `<span class="veg" role="img" aria-label="${i.v ? "Vegetarian" : "Non-vegetarian"}"></span>
+      <h3></h3><div class="cat"></div>
+      <div class="price"><strong class="${verified ? "" : "ask"}">${verified ? "₹" + i.p : "Ask at café"}</strong>
+      <span class="tag ${verified ? "ok" : "ref"}">${verified ? "LISTED PRICE" : "REFERENCE"}</span></div>`;
+    d.querySelector("h3").textContent = i.n;
+    d.querySelector(".cat").textContent = i.c.toUpperCase() + " · " + i.s;
+    tilt(d, 9);
+    grid.appendChild(d);
+  });
+  $("#empty").hidden = items.length > 0;
+}
+
+/* 3D tilt */
+const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+function tilt(el, max){
+  if (still) return;
+  el.addEventListener("pointermove", e => {
+    const r = el.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+    el.style.transform = `rotateX(${-y * max}deg) rotateY(${x * max}deg) translateY(-4px)`;
+  });
+  el.addEventListener("pointerleave", () => el.style.transform = "");
+}
+const hero = $("#heroRight"), scene = $("#scene");
+if (!still) {
+  hero.addEventListener("pointermove", e => {
+    const r = hero.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+    scene.style.transform = `rotateX(${-y * 18}deg) rotateY(${x * 24}deg)`;
+  });
+  hero.addEventListener("pointerleave", () => scene.style.transform = "");
+}
+
+/* mobile nav */
+const mb = document.querySelector(".menu-btn"), nav = $("#nav");
+mb.onclick = () => { const o = nav.classList.toggle("open"); mb.setAttribute("aria-expanded", o); };
+nav.addEventListener("click", () => { nav.classList.remove("open"); mb.setAttribute("aria-expanded", false); });
+$("#yr").textContent = new Date().getFullYear();
+render();
+</script>
+</body>
+</html>
